@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+
+*,
+*::after,
+*::before {
+	 box-sizing: inherit;
+}
+
+* {
+	 font: inherit;
+}
+
+:root {
+	 --primary-font: 'Source Sans Pro', sans-serif;
+	 --lunch-schedule-rows-number: 30;
+	 --lunch-schedule-rows-height: 30px;
+}
+
+html, body, div, span, ul, li {
+	 margin: 0;
+	 padding: 0;
+	 border: 0;
+}
+
+html {
+	 box-sizing: border-box;
+}
+
+body {
+	 background-color: #FFFFFF;
+	 color: #212121;
+	 font-family: var(--primary-font, sans-serif);
+}
+
+ol, ul {
+	 list-style: none;
+}
+
+.lunch-schedule {
+	 position: relative;
+	 width: 700px;
+	 margin: 50px auto;
+}
+
+.lunch-schedule-timeline {
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+}
+
+.lunch-schedule-timeline li {
+	 position: relative;
+	 height: 30px;
+	 width: 80px;
+	 padding-right: 15px;
+	 text-align: right;
+}
+
+.lunch-schedule-timeline li::after {
+	 content: '';
+	 position: absolute;
+	 bottom: 0;
+	 height: 1px;
+	 width: 100%;
+	 left: 0;
+}
+
+.lunch-schedule-timeline li:last-of-type::after {
+	 display: none;
+}
+
+.lunch-schedule-timeline li span {
+	 display: inline-block;
+	 transform: translateY(-50%);
+	 height: 30px;
+}
+
+.lunch-schedule-timeline li .time-now {
+	 font-size: 18px;
+}
+
+.lunch-schedule-timeline li .time-detail,
+.lunch-schedule-timeline li .time-period {
+	 font-size: 12px;
+}
+
+.lunch-schedule-events {
+	 position: relative;
+	 z-index: 1;
+	 border-left: 1px solid #ebebeb;
+	 margin-left: 80px;
+	 padding-left: 10px;
+	 padding-right: 10px;
+	 width: 620px;
+}
+
+.lunch-schedule-events > ul {
+	 display: flex;
+	 flex-wrap: nowrap;
+}
+
+.lunch-schedule-group {
+	 flex-basis: 0;
+	 flex-grow: 1;
+	 margin-bottom: 0;
+}
+
+.lunch-schedule-group:not(:first-of-type) {
+    margin-left: 2px;
+}
+
+.lunch-schedule-group > ul {
+	 position: relative;
+	 display: flex;
+	 height: 720px;
+	 overflow: visible;
+	 padding: 0;
+}
+
+.lunch-schedule-event {
+	 flex-shrink: 0;
+	 float: left;
+	 transition: opacity 0.2s, background 0.2s;
+	 position: absolute;
+	 z-index: 3;
+	 width: calc(100% + 2px);
+	 left: -1px;
+	 border: 2px solid #EBEBEB;
+}
+
+.lunch-schedule-event span {
+	 display: block;
+	 height: 100%;
+	 padding: 10px;
+     color: #1C5CA3;
+     border-left: 5px solid #1C5CA3;
+}
+
+.available-matcher span {
+    color: #005E2F;
+    border-left: 5px solid #005E2F;
+}
+
+.no-suitable-matcher-available span {
+    color: #333333;
+    border-left: 5px solid #333333;
+}
