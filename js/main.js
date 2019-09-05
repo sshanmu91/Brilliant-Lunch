@@ -1,12 +1,14 @@
 function LunchEventMapper () {};
 
 LunchEventMapper.renderLunchEvents = function(lunchMatchScheduler) {
+    //Resetting the previously rendered events
     LunchEventMapper.resetLunchEvents();
     
     var lunchEventElement = '<li class="lunch-schedule-event"><span>Brilliant Lunch</span></li>';
     var lunchEventsDOM = '';
     var lunchEventsArray = [];
     
+    //Rendering the Lunch Events
     lunchEventsArray = lunchMatchScheduler.notSuitablePersons;
     for (var i = 0; i < lunchEventsArray.length; i += 1) {
         lunchEventsDOM += lunchEventElement;
@@ -32,6 +34,7 @@ LunchEventMapper.renderLunchEvents = function(lunchMatchScheduler) {
     }
     $('.my-event').html(lunchEventsDOM);
     
+    //To set the position of the events in the Scheduler
 	LunchEventMapper.sizeLunchEvents(lunchMatchScheduler);
 };
 
@@ -89,6 +92,7 @@ LunchEventMapper.sizeLunchEvents = function (lunchMatchScheduler) {
     
     var lunchEventWidth = Math.floor($($('.my-event').find('.lunch-schedule-event')[0]).outerWidth());
     
+    //Last Event to occupy the maximum available width
     if (lunchMatchScheduler.suitablePersons.length > 0) {
         if (lunchMatchScheduler.notSuitablePersons[lunchMatchScheduler.notSuitablePersons.length - 1].start >= lunchMatchScheduler.suitablePersons[lunchMatchScheduler.suitablePersons.length - 1].end) {
             if (lunchMatchScheduler.notSuitablePersons[lunchMatchScheduler.notSuitablePersons.length - 1].start >= lunchMatchScheduler.selfPerson[lunchMatchScheduler.selfPerson.length - 1].end) {

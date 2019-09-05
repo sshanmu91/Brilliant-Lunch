@@ -85,16 +85,18 @@ ol, ul {
 .lunch-schedule-timeline li .time-detail,
 .lunch-schedule-timeline li .time-period {
 	 font-size: 12px;
+     color: #C4C4C4;
 }
 
 .lunch-schedule-events {
 	 position: relative;
 	 z-index: 1;
-	 border-left: 1px solid #ebebeb;
+	 border-left: 1px solid #D3D3D3;
 	 margin-left: 80px;
 	 padding-left: 10px;
 	 padding-right: 10px;
 	 width: 620px;
+     background-color: #EBEBEB;
 }
 
 .lunch-schedule-events > ul {
@@ -128,7 +130,7 @@ ol, ul {
 	 z-index: 3;
 	 width: calc(100% + 2px);
 	 left: -1px;
-	 border: 2px solid #EBEBEB;
+	 border: 2px solid #D3D3D3;
 }
 
 .lunch-schedule-event span {
@@ -137,6 +139,8 @@ ol, ul {
 	 padding: 10px;
      color: #1C5CA3;
      border-left: 5px solid #1C5CA3;
+     background-color: #FFFFFF;
+     font-weight: bolder;
 }
 
 .available-matcher span {

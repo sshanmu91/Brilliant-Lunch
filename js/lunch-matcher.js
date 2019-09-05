@@ -29,6 +29,7 @@ function matchLunchEvent(availableLunchEvents) {
         }
     }
     
+    //Categorizing the events accordingly so that they shouldn't be overlapped
     if (suitableListedPersons.length > 0) {
         suitableListedPersons.sort(function (personA, personB) {return personA.start - personB.start});
         
@@ -60,9 +61,9 @@ function matchLunchEvent(availableLunchEvents) {
 }
 
 //Suitable Lunch Match
-var availableLunchEvents = [{start: 225, end: 285},{start: 210, end: 270},{start: 180, end: 240},{start: 240, end: 300},{start: 300, end: 360},{start: 270, end: 330}];
+//var availableLunchEvents = [{start: 225, end: 285},{start: 210, end: 270},{start: 180, end: 240},{start: 240, end: 300},{start: 300, end: 360},{start: 270, end: 330}];
 
 //No Suitable Lunch Match
 //var availableLunchEvents = [{start: 225, end: 285},{start: 300, end: 360}, {start: 180, end: 240}];
 
-matchLunchEvent(availableLunchEvents);
+//matchLunchEvent(availableLunchEvents);
